@@ -32,7 +32,7 @@ function renderCommits(commits) {
                 </div>
                 <span>
                     <p class="commit-time">${formatDate(com.author?.date || '')}</p>
-                    <img src="${com.author.avatar_url}" width="16" height="16" style="border-radius: 50%;">
+                    <img src="${com.author.avatar_url}" width="16" height="16" style="border-radius: 50%;" onerror="this.style.display='none'">
                     <p class="commit-author">${com.author?.name || 'Unknown'}</p>
                 </span>
             </li>
