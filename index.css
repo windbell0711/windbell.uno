@@ -82,7 +82,70 @@ p.project-name {
 }
 
 #commits {
-    min-height: 200px;
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #30363d var(--bg2);
+}
+
+#commits::-webkit-scrollbar {
+    width: 8px;
+}
+
+#commits::-webkit-scrollbar-track {
+    background: var(--bg2);
+    border-radius: 4px;
+}
+
+#commits::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 4px;
+}
+
+#commits::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+}
+
+#masters {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #30363d var(--bg2);
+}
+
+#masters::-webkit-scrollbar {
+    height: 8px;
+}
+
+#masters::-webkit-scrollbar-track {
+    background: var(--bg2);
+    border-radius: 4px;
+}
+
+#masters::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 4px;
+}
+
+#masters::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+}
+
+#masters .items-list {
+    display: flex;
+    gap: 16px;
+    padding: 8px 0;
+}
+
+#masters .items {
+    min-width: 280px;
+    max-width: 320px;
+    flex-shrink: 0;
+    background-color: var(--bg1);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 16px;
 }
 
 .loading {
@@ -109,17 +172,43 @@ p.project-name {
     to { transform: rotate(360deg); }
 }
 
-.commits-list {
+.items-list {
     list-style: none;
 }
 
-.commit-item {
+.items {
     padding: 12px;
     transition: background-color 0.15s ease;
 }
 
-.commit-item:hover {
+.items:hover {
     background-color: #21262d;
+}
+
+.repo-name {
+    color: var(--text1);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.repo-description {
+    color: var(--text3);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.repo-lang {
+    color: #58a6ff;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.repo-created {
+    color: var(--text3);
+    font-size: 0.8rem;
+    margin-bottom: 0;
 }
 
 .commit-title {
@@ -136,7 +225,7 @@ p.project-name {
     line-height: 1.0;
 }
 
-.commit-item span {
+.items > span {
     display: flex;
     align-items: center;
     gap: 10px;
