@@ -84,8 +84,8 @@ async function renderRepos() {
                 <p class="repo-name"><a href="https://github.com/${config.user_name}/${repo.name}" target="_blank">${repo.name}</a></p>
                 <p class="repo-description">${repo.description || 'No description provided.'}</p>
                 <p class="repo-homepage">${repo.homepage || ''}</p>
-                <img src="https://img.shields.io/github/stars/${config.user_name}/${repoName}?style=square&color=orange" alt="${repo.stargazers_count} Stars">
-                <img src="https://img.shields.io/github/forks/${config.user_name}/${repoName}?style=square&color=blue" alt="${repo.forks_count} Forks">
+                <img src="https://img.shields.io/badge/stars-${repo.stargazers_count}-orange" alt="${repo.stargazers_count} Stars">
+                <img src="https://img.shields.io/badge/forks-${repo.forks_count}-blue" alt="${repo.forks_count} Forks">
                 <span>
                     <p class="repo-lang">${repo.language || 'Unknown language'}</p>
                     <p class="repo-created">created at ${formatDate(repo.created_at || '')}</p>

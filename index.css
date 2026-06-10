@@ -226,7 +226,7 @@ p.project-name {
 .commit-description {
     color: var(--text3);
     font-size: 0.8rem;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     line-height: 1.0;
 }
 
