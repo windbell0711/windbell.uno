@@ -182,7 +182,7 @@ p.project-name {
 }
 
 .items:hover {
-    background-color: #21262d;
+    background-color: #1c1d1e;
 }
 
 .repo-name {
@@ -195,8 +195,13 @@ p.project-name {
 .repo-description {
     color: var(--text3);
     font-size: 0.9rem;
-    margin-bottom: 12px;
     line-height: 1.4;
+}
+
+.repo-homepage {
+    color: var(--text3);
+    font-size: 0.9rem;
+    margin-bottom: 14px;
 }
 
 .repo-lang {
