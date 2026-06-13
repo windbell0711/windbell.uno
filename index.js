@@ -51,13 +51,12 @@ async function renderCommits() {
         const messageLines = com.message.split('\n');
         ret += `
             <li class="items">
-                <p class="commit-title">${messageLines[0]}</p>
+                <p class="commit-title"><a href="${commit.html_url}" target="_blank">${messageLines[0]}</a></p>
                 <div>
                     <p class="commit-description">${messageLines.slice(1).filter(line => line.trim()).join('<p/><p class="commit-description">')}</p>
                 </div>
                 <span>
                     <p class="commit-time">${formatDate(com.author?.date || '')}</p>
-                    <img src="${com.author.avatar_url}" width="16" height="16" style="border-radius: 50%;" onerror="this.style.display='none'">
                     <p class="commit-author">${com.author?.name || 'Unknown'}</p>
                 </span>
             </li>
