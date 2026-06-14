@@ -8,18 +8,19 @@ const memos = {
 };
 
 const startDate = new Date(2026, 5, 1);  // 6.1
-const endDate   = new Date(2026, 7, 30); // 8.30
+const endDate   = new Date(2026, 6, 30); // 7.30
 
-const calendarGrid = document.getElementById('calendarGrid');
+const dayHeaders = document.getElementById('dayHeaders');
+const calendarDaysScroll = document.getElementById('calendarDaysScroll');
 const memoContentElement = document.getElementById('memoContent');
 
 // 添加星期标题
 const weekdays = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
 weekdays.forEach(day => {
-    const headerCell = document.createElement('div');
+    const headerCell = document.createElement('p');
     headerCell.className = 'day-header';
     headerCell.textContent = day;
-    calendarGrid.appendChild(headerCell);
+    dayHeaders.appendChild(headerCell);
 });
 
 // 渲染日历
@@ -63,7 +64,7 @@ while (currentDate <= endDate) {
             }
         });
 
-        calendarGrid.appendChild(dayCell);
+        calendarDaysScroll.appendChild(dayCell);
         currentDate.setDate(currentDate.getDate() + 1);
     }
 }
