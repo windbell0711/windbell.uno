@@ -5,17 +5,36 @@ main {
     max-width: 750px;
 }
 
-h1 {
+.header-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.header-row h1 {
     color: var(--text1);
-    margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 500;
+    margin-bottom: 0;
+}
+
+#back-button {
+    display: inline-block;
+    color: var(--text2);
+    margin-bottom: 1px;
+    transform: rotate(-90deg);
+    transition: color 0.2s ease;
+}
+
+#back-button:hover {
+    color: var(--text1);
 }
 
 .calendar-container {
     background-color: var(--bg2);
     border-radius: 8px;
-    height: calc(100vh - 200px - 175px);
+    height: calc(100vh - 200px - 185px);
     overflow: hidden;
 }
 
@@ -74,7 +93,7 @@ h1 {
     border: none;
 }
 
-.calendar-day, .calendar-day-special {
+.calendar-day {
     background-color: #222;
     min-height: 80px;
     min-width:  80px;
@@ -85,22 +104,28 @@ h1 {
     border: none;
 }
 
-.calendar-day-special::before {
-    content: '';
+.calendar-dot-important, .calendar-dot-busy {
     position: absolute;
     top: 12px;
     right: 12px;
     width: 7px;
     height: 7px;
-    background: #d29922;
     border-radius: 50%;
 }
 
-.calendar-day:hover, .calendar-day-special:hover {
+.calendar-dot-important {
+    background: #ce3331;
+}
+
+.calendar-dot-busy {
+    background: #d29922;
+}
+
+.calendar-day:hover {
     background-color: #333;
 }
 
-.calendar-day.selected, .calendar-day-special.selected {
+.calendar-day.selected {
     background-color: #0078D7;
 }
 
@@ -122,11 +147,12 @@ h1 {
 }
 
 .memo-container {
-    margin-top: 30px;
+    margin-top: 20px;
     background-color: var(--bg2);
     border-radius: 8px;
     padding: 20px;
-    height: 200px;
+    height: 225px;
+    overflow-y: auto;
 }
 
 .memo-container h2 {
@@ -143,6 +169,11 @@ h1 {
     white-space: pre-wrap; /* 保留换行符 */
 }
 
+.memo-content u {
+    text-decoration: none;
+    border-bottom: 1px dashed
+}
+
 .no-memo {
     color: #888;
     font-style: italic;
@@ -157,7 +188,6 @@ h1 {
     font-weight: 600;
     padding: 1px 4px;
     border-radius: 4px;
-    margin-bottom: 2px;
     margin-left: 8px;
 }
 
@@ -170,6 +200,5 @@ h1 {
     font-weight: 600;
     padding: 1px 4px;
     border-radius: 4px;
-    margin-bottom: 2px;
     margin-left: 8px;
 }
