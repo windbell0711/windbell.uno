@@ -2,7 +2,7 @@
 
 main {
     width: 85%;
-    max-width: 900px;
+    max-width: 750px;
 }
 
 h1 {
@@ -74,8 +74,8 @@ h1 {
     border: none;
 }
 
-.calendar-day {
-    background-color: var(--bg2);
+.calendar-day, .calendar-day-special {
+    background-color: #222;
     min-height: 80px;
     min-width:  80px;
     padding: 8px;
@@ -85,12 +85,23 @@ h1 {
     border: none;
 }
 
-.calendar-day:hover {
-    background-color: var(--bg3);
+.calendar-day-special::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 7px;
+    height: 7px;
+    background: #d29922;
+    border-radius: 50%;
 }
 
-.calendar-day.selected {
-    background-color: var(--bg3);
+.calendar-day:hover, .calendar-day-special:hover {
+    background-color: #333;
+}
+
+.calendar-day.selected, .calendar-day-special.selected {
+    background-color: #0078D7;
 }
 
 .day-number {
@@ -135,4 +146,30 @@ h1 {
 .no-memo {
     color: #888;
     font-style: italic;
+}
+
+/* Busy 标签 */
+.label-busy {
+    display: inline-block;
+    background: #a4740d;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1px 4px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    margin-left: 8px;
+}
+
+/* Important 标签 */
+.label-important {
+    display: inline-block;
+    background: #ce3331;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1px 4px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    margin-left: 8px;
 }
