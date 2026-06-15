@@ -69,6 +69,12 @@ main {
     display: none;
 }
 
+.calendar-days-scroll.is-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* .calendar-days-scroll::-webkit-scrollbar-track {
     background: var(--bg1);
     border-radius: 3px;

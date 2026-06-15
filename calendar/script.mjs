@@ -15,14 +15,14 @@ const calendarDaysScroll = document.getElementById('calendarDaysScroll');
 const memoContentElement = document.getElementById('memoContent');
 
 // 备忘录数据 (格式: YYYY-MM-DD)
-calendarDaysScroll.innerHTML = '<div class="loading">加载中...</div>';
-
 let memos;
 try {
     memos = await fetchData();
+    calendarDaysScroll.classList.remove('is-loading');
     calendarDaysScroll.innerHTML = '';
 } catch (e) {
-    calendarDaysScroll.innerHTML = '<div class="error-message">加载失败，请刷新重试</div>';
+    calendarDaysScroll.classList.remove('is-loading');
+    calendarDaysScroll.innerHTML = '<div class="error-message" style="grid-column: 1 / -1;">加载失败，请刷新重试</div>';
 }
 // console.log(memos);
 
