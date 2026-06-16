@@ -80,13 +80,15 @@ while (currentDate <= endDate) {
             const clickedMemo = memos[clickedDateString];
 
             if (clickedMemo) {
-                let para = `${clickedDateString}  ${weekdays[i]}`;
+                let para = (dateString == today ? "今天  " : "") + 
+                           clickedDateString + "  " + weekdays[i];
                 if (clickedMemo['label'] == 'busy') para += `<p class="label-busy">Busy</p>`;
                 else if (clickedMemo['label'] == 'important') para += `<p class="label-important">Important</p>`;
                 if (clickedMemo['proj'])  para += `<p><i>Working on: </i><u>${clickedMemo['proj']}</u></p>`;
-                if (clickedMemo['tech'])  para += `<p><i>Breakthrough: </i><u>${clickedMemo['tech']}</u></p>`;
+                if (clickedMemo['tech'])  para += `<p><i>Tech: </i><u>${clickedMemo['tech']}</u></p>`;
                 if (clickedMemo['other']) para += `<p><i>Other: </i><u>${clickedMemo['other']}</u></p>`;
                 if (clickedMemo['pwq']) para += `<p><u>${clickedMemo['pwq']}</u></p>`;
+                if (dateString == today) para += "<p><i>Studying ...</i></p>"
                 memoContentElement.innerHTML = para;
             } else {
                 memoContentElement.innerHTML = `<span class="no-memo">(${clickedDateString}) 暂无记录</span>`;
