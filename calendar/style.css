@@ -1,7 +1,7 @@
 @import '../root.css';
 
 main {
-    width: 85%;
+    width: 95%;
     max-width: 750px;
 }
 
@@ -101,8 +101,8 @@ main {
 
 .calendar-day {
     background-color: #222;
-    min-height: 80px;
-    min-width:  80px;
+    min-height: 75px;
+    min-width:  75px;
     padding: 8px;
     cursor: pointer;
     transition: background-color 0.2s ease;

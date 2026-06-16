@@ -10,7 +10,7 @@ function formatDate(date) {
 const startDate = new Date(2026, 5, 1);  // 6.1
 const endDate   = new Date(2026, 6, 30); // 7.30
 
-const dayHeaders = document.getElementById('dayHeaders');
+// const dayHeaders = document.getElementById('dayHeaders');
 const calendarDaysScroll = document.getElementById('calendarDaysScroll');
 const memoContentElement = document.getElementById('memoContent');
 
@@ -34,7 +34,7 @@ weekdays.forEach(day => {
     const headerCell = document.createElement('p');
     headerCell.className = 'day-header';
     headerCell.textContent = day;
-    dayHeaders.appendChild(headerCell);
+    calendarDaysScroll.appendChild(headerCell);
 });
 
 // 渲染日历
