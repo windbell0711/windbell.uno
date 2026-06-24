@@ -1,5 +1,5 @@
 // 1. 导入正确的 SDK
-import { createClient } from 'https://esm.sh/@neondatabase/neon-js@latest';
+import { createClient } from 'https://esm.sh/@neondatabase/neon-js@2.0.0';
 
 async function fetchData() {
   // 2. 初始化客户端，这里的配置参考原代码
