@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg1: #101112;
   --bg2: #202122;
   --text1: #f0f6fc;
@@ -274,4 +274,35 @@ aside a {
 
 aside a:hover {
     opacity: 1;
+}
+#bilibili .bili-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #30363d var(--bg2);
+}
+#bilibili .bili-scroll::-webkit-scrollbar { height: 8px; }
+#bilibili .bili-scroll::-webkit-scrollbar-track { background: var(--bg2); border-radius: 4px; }
+#bilibili .bili-scroll::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+#bilibili .bili-scroll::-webkit-scrollbar-thumb:hover { background: #484f58; }
+#bilibili .items-list {
+    display: flex;
+    gap: 16px;
+    padding: 8px 0;
+}
+#bilibili .bili-card {
+    min-width: 400px;
+    max-width: 480px;
+    flex-shrink: 0;
+    background-color: var(--bg1);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 8px;
+}
+.bili-card iframe {
+    width: 100%;
+    height: 238px;
+    border: 0;
+    display: block;
+    border-radius: 6px;
 }

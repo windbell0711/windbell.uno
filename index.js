@@ -1,8 +1,8 @@
-const config = {
+﻿const config = {
     "user_name": "windbell0711",
     "recent_repo": "flchemist",
     "master_repos": [
-        "BingGo2", "Vatrix-vbe-sm", "flchemist"
+        "BingGo2", "flchemist", "Vatrix-vbe-sm"
     ]
 };
 const BRANCH = 'main';
@@ -102,7 +102,24 @@ async function renderRepos() {
     mastersContainer.innerHTML = ret;
 }
 
+const biliVideos = {
+    "BV1j9WBe9EcU": { title: "Vlog | 记录一次在家做的物理小实验，简单的暑假作业背后是不简单的故事", uploader: "windbell_pwq" },
+    "BV1hCXnYUEft": { title: "【中国象棋vs国际象棋】超强ai的对局！", uploader: "BingGo独立游戏" }
+};
+
+async function renderBilibili() {
+    const list = document.getElementById('bili-list');
+    if (!list) return;
+    for (const card of list.querySelectorAll('.bili-card')) {
+        const bvid = card.dataset.bvid;
+        const info = biliVideos[bvid];
+        card.querySelector('.bili-title').textContent = info ? info.title : '';
+        card.querySelector('.bili-uploader').textContent = info ? info.uploader : '';
+    }
+}
+
 (async () => {
     await renderCommits();
     await renderRepos();
+    await renderBilibili();
 })();
