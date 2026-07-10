@@ -16,20 +16,28 @@ const keyMap = {
   "u": "B4",
 };
 
+// 预加载所有音频
+const preloaded = {};
+for (const note of Object.values(keyMap)) {
+  const audio = new Audio(`/piano/${AUDIO_DIR}/${note}.mp3`);
+  audio.volume = 1.0;
+  // 提前加载到内存
+  audio.load();
+  preloaded[note] = audio;
+}
+
 document.addEventListener("keydown", (e) => {
-  // 防止长按触发重复事件
   if (e.repeat) return;
 
   const key = e.key.toLowerCase();
   const note = keyMap[key];
   if (!note) return;
 
-  const audio = new Audio(`/piano/${AUDIO_DIR}/${note}.mp3`);
-  audio.volume = 1.0;
+  // 每次克隆预加载的 Audio 再播放，避免同一元素播放冲突
+  const audio = preloaded[note].cloneNode(false);
   audio.play().catch((err) => {
     console.warn(`⚠️ 播放失败 ${note}.mp3:`, err);
   });
-  // console.log(`🎵 播放: ${note}.mp3`);
 });
 
-console.log("加载完成");
+console.log("✅ 钢琴音频预加载完成");
