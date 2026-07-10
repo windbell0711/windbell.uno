@@ -24,7 +24,7 @@ document.addEventListener("keydown", (e) => {
   const note = keyMap[key];
   if (!note) return;
 
-  const audio = new Audio(`${AUDIO_DIR}/${note}.mp3`);
+  const audio = new Audio(`/piano/${AUDIO_DIR}/${note}.mp3`);
   audio.volume = 1.0;
   audio.play().catch((err) => {
     console.warn(`⚠️ 播放失败 ${note}.mp3:`, err);
